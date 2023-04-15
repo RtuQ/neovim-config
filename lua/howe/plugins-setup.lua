@@ -33,7 +33,8 @@ return packer.startup(function(use)
 
 	use("nvim-lua/plenary.nvim") -- lua functions that many plugins use
 
-	use("bluz71/vim-nightfly-guicolors") -- preferred colorscheme
+	-- use("bluz71/vim-nightfly-guicolors") -- preferred colorscheme
+  use("folke/tokyonight.nvim")
 
 	use("christoomey/vim-tmux-navigator") -- tmux & split window navigation
 
@@ -107,6 +108,11 @@ return packer.startup(function(use)
 
 	-- git integration
 	use("lewis6991/gitsigns.nvim") -- show line modifications on left hand side
+    
+    use {
+    "ggandor/leap.nvim",
+    config = function() require("leap").set_default_keymaps() end
+}
 
 	if packer_bootstrap then
 		require("packer").sync()
