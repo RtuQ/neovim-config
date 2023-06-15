@@ -116,6 +116,11 @@ return packer.startup(function(use)
 		end,
 	})
 
+	use({
+		-- Add indentation guides even on blank lines
+		"lukas-reineke/indent-blankline.nvim",
+	})
+
 	use({ "sindrets/diffview.nvim", requires = "nvim-lua/plenary.nvim" })
 
 	if packer_bootstrap then
