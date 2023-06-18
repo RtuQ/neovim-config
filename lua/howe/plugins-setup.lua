@@ -49,14 +49,6 @@ return packer.startup(function(use)
 
 	-- file explorer
 	use({ "nvim-tree/nvim-tree.lua", requires = "nvim-tree/nvim-web-devicons" })
-	-- use({
-	-- 	"nvim-neo-tree/neo-tree.nvim",
-	-- 	branch = "v2.x",
-	-- 	requires = {
-	-- 		"nvim-lua/plenary.nvim",
-	-- 		"MunifTanjim/nui.nvim",
-	-- 	},
-	-- })
 
 	-- vs-code like icons
 	use("nvim-tree/nvim-web-devicons")

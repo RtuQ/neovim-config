@@ -20,17 +20,39 @@ keymap.set("n", "x", '"_x')
 keymap.set("n", "<leader>+", "<C-a>") -- increment
 keymap.set("n", "<leader>-", "<C-x>") -- decrement
 
--- window management
-keymap.set("n", "<leader>sv", "<C-w>v") -- split window vertically
-keymap.set("n", "<leader>sh", "<C-w>s") -- split window horizontally
-keymap.set("n", "<leader>se", "<C-w>=") -- make split windows equal width & height
-keymap.set("n", "<leader>sx", ":close<CR>") -- close current split window
+-- Terminal Mappings
+keymap.set("t", "<esc><esc>", "<c-\\><c-n>", { desc = "Enter Normal Mode" })
+keymap.set("t", "<C-h>", "<cmd>wincmd h<cr>", { desc = "Go to left window" })
+keymap.set("t", "<C-j>", "<cmd>wincmd j<cr>", { desc = "Go to lower window" })
+keymap.set("t", "<C-k>", "<cmd>wincmd k<cr>", { desc = "Go to upper window" })
+keymap.set("t", "<C-l>", "<cmd>wincmd l<cr>", { desc = "Go to right window" })
+keymap.set("t", "<C-/>", "<cmd>close<cr>", { desc = "Hide Terminal" })
+keymap.set("t", "<c-_>", "<cmd>close<cr>", { desc = "which_key_ignore" })
 
+keymap.set("n", "<A-j>", "<cmd>m .+1<cr>==", { desc = "Move down" })
+keymap.set("n", "<A-k>", "<cmd>m .-2<cr>==", { desc = "Move up" })
+keymap.set("i", "<A-j>", "<esc><cmd>m .+1<cr>==gi", { desc = "Move down" })
+keymap.set("i", "<A-k>", "<esc><cmd>m .-2<cr>==gi", { desc = "Move up" })
+keymap.set("v", "<A-j>", ":m '>+1<cr>gv=gv", { desc = "Move down" })
+keymap.set("v", "<A-k>", ":m '<-2<cr>gv=gv", { desc = "Move up" })
+
+-- windows
+keymap.set("n", "<leader>ww", "<C-W>p", { desc = "Other window", remap = true })
+keymap.set("n", "<leader>wd", "<C-W>c", { desc = "Delete window", remap = true })
+keymap.set("n", "<leader>w-", "<C-W>s", { desc = "Split window below", remap = true })
+keymap.set("n", "<leader>w|", "<C-W>v", { desc = "Split window right", remap = true })
+keymap.set("n", "<leader>-", "<C-W>s", { desc = "Split window below", remap = true })
+keymap.set("n", "<leader>|", "<C-W>v", { desc = "Split window right", remap = true })
+keymap.set("n", "<C-h>", "<C-w>h", { desc = "Go to left window", remap = true })
+keymap.set("n", "<C-j>", "<C-w>j", { desc = "Go to lower window", remap = true })
+keymap.set("n", "<C-k>", "<C-w>k", { desc = "Go to upper window", remap = true })
+keymap.set("n", "<C-l>", "<C-w>l", { desc = "Go to right window", remap = true })
 -- keymap.set("n", "<leader>to", ":tabnew<CR>") -- open new tab
 -- bufferline
-keymap.set("n", "<leader>tc", ":BufferLinePickClose<CR>") -- close current tab
-keymap.set("n", "<leader>tn", ":BufferLineCycleNext<CR>") --  go to next tab
-keymap.set("n", "<leader>tp", ":BufferLineCyclePrev<CR>") --  go to previous tab
+keymap.set("n", "<S-h>", "<cmd>BufferLineCyclePrev<cr>", { desc = "Prev buffer" })
+keymap.set("n", "<S-l>", "<cmd>BufferLineCycleNext<cr>", { desc = "Next buffer" })
+keymap.set("n", "[b", "<cmd>BufferLineCyclePrev<cr>", { desc = "Prev buffer" })
+keymap.set("n", "]b", "<cmd>BufferLineCycleNext<cr>", { desc = "Next buffer" })
 
 ----------------------
 -- Plugin Keybinds
