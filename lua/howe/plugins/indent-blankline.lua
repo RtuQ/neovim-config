@@ -3,4 +3,7 @@ if not status then
 	return
 end
 
-blankline.setup({})
+blankline.setup({
+	char = "┊",
+	show_trailing_blankline_indent = false,
+})
