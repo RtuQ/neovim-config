@@ -28,7 +28,16 @@ local plugins = {
 	"numToStr/Comment.nvim",
 
 	-- file explorer
-	{ "nvim-tree/nvim-tree.lua", dependencies = "nvim-tree/nvim-web-devicons" },
+	-- { "nvim-tree/nvim-tree.lua", dependencies = "nvim-tree/nvim-web-devicons" },
+	{
+		"nvim-neo-tree/neo-tree.nvim",
+		branch = "v2.x",
+		dependencies = {
+			"nvim-lua/plenary.nvim",
+			"nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
+			"MunifTanjim/nui.nvim",
+		},
+	},
 
 	-- vs-code like icons
 	"nvim-tree/nvim-web-devicons",

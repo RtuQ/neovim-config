@@ -5,4 +5,15 @@ if not bufferline_setup then
 end
 
 -- configure autopairs
-bufferline.setup({})
+bufferline.setup({
+	options = {
+		offsets = {
+			{
+				filetype = "neo-tree",
+				text = "Neo-tree",
+				highlight = "Directory",
+				text_align = "left",
+			},
+		},
+	},
+})
